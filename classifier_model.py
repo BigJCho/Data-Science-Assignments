@@ -3,9 +3,7 @@ from sklearn.model_selection import train_test_split
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import TensorDataset, DataLoader
-
-# I assumed it was a binary classification, upon printing the labels I realized there are 12 classes. 
+from torch.utils.data import TensorDataset, DataLoader 
 
 class LinearClassifier(nn.Module):
     def __init__(self, shape):
@@ -26,7 +24,7 @@ class LinearClassifier(nn.Module):
 
         return x
     
-#Process the data
+# Process the data
 file_path = 'hw6.data.csv.gz'
 embeddings = pd.read_csv(file_path, header=None, compression='gzip')
 
@@ -40,7 +38,7 @@ stddev = embeddings.std()[:-1]
 median = embeddings.median()[:-1]
 min_value = embeddings.min()[:-1]
 
-#Normalization and standardization
+# Normalization and standardization
 features_normalized = (features - min_value) / (max_value - min_value)
 features_standardized = (features - mean) / stddev
 
