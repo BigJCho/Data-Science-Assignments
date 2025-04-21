@@ -34,7 +34,6 @@ class LinearClassifier(nn.Module):
         return x
     
 #Process the data
-#Process the data
 train_image_path = 'train-images-idx3-ubyte.gz'
 train_label_path = 'train-labels-idx1-ubyte.gz'
 test_image_path = 't10k-images-idx3-ubyte.gz'
